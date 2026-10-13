@@ -1,6 +1,8 @@
 
 import os
 
+import time
+
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
@@ -36,9 +38,9 @@ if not GOOGLE_API_KEY:
 # ============================================================
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-3.8-flash",
+    model="gemini-3.1-flash-lite",
     api_key=GOOGLE_API_KEY,
-    temperature=0,
+    temperature=0
 )
 
 
